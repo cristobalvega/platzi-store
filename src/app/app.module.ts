@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './components/product.component';
 import { CartComponent } from './cart/cart.component';
 import { ExponentialPipe } from './exponential.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ExponentialPipe } from './exponential.pipe';
     ProductComponent,
     CartComponent,
     ExponentialPipe,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,
