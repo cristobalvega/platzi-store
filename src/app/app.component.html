@@ -1,7 +1,6 @@
 <input type="text" [(ngModel)]="title">
 {{ title }}
 
-<app-product></app-product>
 <div [ngSwitch]="title">
     <p *ngSwitchCase="'cristobal'">Este es Cristobal</p>
     <p *ngSwitchCase="'Kylo'">Este es Kyo Ren</p>
@@ -20,7 +19,5 @@
 </ul>
 
 <div *ngFor="let product of products">
-    {{ product.title }}
-    <img [src]="product.image" alt="imagen de producto">
-    {{  product.price }}
+    <app-product (productClicked)="clickProduct($event)" [product]="product"></app-product>
 </div>
