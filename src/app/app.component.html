@@ -1,6 +1,9 @@
 <input type="text" [(ngModel)]="title">
 {{ title }}
 
+<input type="text" [(ngModel)]="power">
+{{ power | exponential }}
+
 <div [ngSwitch]="title">
     <p *ngSwitchCase="'cristobal'">Este es Cristobal</p>
     <p *ngSwitchCase="'Kylo'">Este es Kyo Ren</p>
