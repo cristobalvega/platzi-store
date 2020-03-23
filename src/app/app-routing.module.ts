@@ -2,10 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { ContactComponent } from './contact/contact.component';
-import { ProductsComponent } from './product/components/products/products.component';
-import { DemoComponent } from './demo/components/demo/demo.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProductDetailComponent } from './product/components/product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AdminGuard } from './admin.guard';
 
@@ -36,14 +32,13 @@ const routes: Routes = [
       },
       {
         path: 'products',
-        component: ProductsComponent,
         loadChildren: () => import('./product/product.module').then(m => m.ProductModule),
       },
     ]
   },
   {
     path: '**',
-    component: PageNotFoundComponent,
+    loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
   }
 ];
 
