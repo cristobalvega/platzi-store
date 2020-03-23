@@ -1,13 +1,16 @@
-/*
-body {
-    margin: 0px;
-    padding: 0px;
-}
-*/
 
 .product-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+    grid-gap: 50px 20px;
+}
+
+.container {
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media (min-width: 576px) {
@@ -18,6 +21,11 @@ body {
         box-sizing: border-box;
         grid-gap: 10px;
     }
+  .container {
+    max-width: 1110px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
