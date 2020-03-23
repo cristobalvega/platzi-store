@@ -3,7 +3,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { ContactComponent } from './contact/contact.component';
 import { ProductsComponent } from './product/components/products/products.component';
-import { DemoComponent } from './demo/demo.component';
+import { DemoComponent } from './demo/components/demo/demo.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductDetailComponent } from './product/components/product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
@@ -30,15 +30,16 @@ const routes: Routes = [
         component: ContactComponent,
       },
       {
+        path: 'demo',
+        canActivate: [AdminGuard],
+        loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule)
+      },
+      {
         path: 'products',
         component: ProductsComponent,
         loadChildren: () => import('./product/product.module').then(m => m.ProductModule),
       },
     ]
-  },
-  {
-    path: 'demo',
-    component: DemoComponent,
   },
   {
     path: '**',
