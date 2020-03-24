@@ -46,4 +46,24 @@ export class ProductDetailComponent implements OnInit {
       });
   }
 
+  updateProduct() {
+    const updateProduct: Partial<Product> = {
+      id: '333',
+      title: 'Un gran Hoodie',
+      image: 'assets/images/hoodie.png',
+      price: 5555,
+      description: 'created by @cristobalvega at Platzi! '
+    };
+    this.productsService.updateProduct('333', updateProduct)
+      .subscribe(product => {
+        console.log(product);
+      });
+  }
+
+  deleteProduct() {
+    this.productsService.deleteProduct('333')
+      .subscribe(rta => {
+        console.log(rta);
+      });
+  }
 }
