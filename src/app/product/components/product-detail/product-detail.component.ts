@@ -22,7 +22,6 @@ export class ProductDetailComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       const id = params.id;
       this.fetchProduct(id);
-      // this.product = this.productsService.getProduct(id);
     });
   }
 
@@ -30,6 +29,20 @@ export class ProductDetailComponent implements OnInit {
     this.productsService.getProduct(id)
       .subscribe(product => {
         this.product = product;
+      });
+  }
+
+  createProduct() {
+    const newProduct: Product = {
+      id: '333',
+      title: 'nuevo desde angular',
+      image: 'assets/images/hoodie.png',
+      price: 3000,
+      description: 'created by @cristobalvega at Platzi! '
+    };
+    this.productsService.createProduct(newProduct)
+      .subscribe(product => {
+        console.log(product);
       });
   }
 
