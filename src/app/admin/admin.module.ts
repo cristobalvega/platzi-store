@@ -18,12 +18,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     AdminRoutingModule,
     ReactiveFormsModule,
     MaterialModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
   ]
 })
 export class AdminModule { }
