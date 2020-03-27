@@ -1,1 +1,22 @@
-<p>form-product works!</p>
+<form [formGroup]="form">
+  <mat-form-field>
+    <label>
+      <input formControlName="id" matInput type="text">
+    </label>
+  </mat-form-field>
+  <mat-form-field>
+    <label>
+      <input formControlName="title" matInput type="text">
+    </label>
+  </mat-form-field>
+  <mat-form-field>
+    <label>
+      <input formControlName="price" matInput type="number">
+    </label>
+  </mat-form-field>
+  <mat-form-field>
+    <label>
+      <input formControlName="description" matInput type="text">
+    </label>
+  </mat-form-field>
+</form>
