@@ -9,6 +9,7 @@ import {
     DoCheck,
     OnDestroy } from '@angular/core';
 import { Product } from '../../../core/models/product.model';
+import { CartService } from '../../../core/services/cart.service';
 
 @Component({
     selector: 'app-product',
@@ -22,14 +23,11 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy { // OnChang
 
     today = new Date();
 
-    constructor() {
+    constructor(
+      private cartService: CartService
+    ) {
         console.log('1. Hola, soy el constructor!');
     }
-
-/*     ngOnChanges(changes: SimpleChanges) {
-        console.log('2. Qué tal, soy el ngOnChange');
-        console.log(changes);
-    } */
 
     ngOnInit() {
         console.log('4. Hey, soy el ngOnInit!');
@@ -45,7 +43,8 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy { // OnChang
 
     addCart() {
         console.log('Añadir al carrito');
-        this.productClicked.emit(this.product.id);
+        this.cartService.addCart(this.product);
+        // this.productClicked.emit(this.product.id);
     }
 
 }
