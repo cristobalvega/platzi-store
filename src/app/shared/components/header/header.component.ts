@@ -8,7 +8,7 @@ import { CartService } from '../../../core/services/cart.service';
 })
 export class HeaderComponent implements OnInit {
 
-  total = 0;
+  total: any = 0;
 
   constructor(
     private cartService: CartService
