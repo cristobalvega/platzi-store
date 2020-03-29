@@ -18,6 +18,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatStepperModule} from '@angular/material/stepper';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatMenuModule,
     MatSortModule,
     MatPaginatorModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatStepperModule,
   ],
   exports: [
     MatButtonModule,
@@ -60,6 +62,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatSortModule,
     MatPaginatorModule,
     MatFormFieldModule,
+    MatStepperModule,
   ]
 })
 export class MaterialModule { }
