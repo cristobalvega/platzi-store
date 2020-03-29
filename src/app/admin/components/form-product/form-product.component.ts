@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ProductsService } from '../../../core/services/products/products.service';
 import { Router } from '@angular/router';
-import { MyValidators } from '../../../utils/validators';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
+import { MyValidators } from '../../../utils/validators';
+import { ProductsService } from '../../../core/services/products/products.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -26,7 +26,7 @@ export class FormProductComponent implements OnInit {
     this.buildForm();
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   saveProduct(event: Event) {
@@ -36,23 +36,9 @@ export class FormProductComponent implements OnInit {
       this.productsService.createProduct(product)
         .subscribe((newProduct) => {
           console.log(newProduct);
-          this.router.navigate(['./admin/products']).then(r => { console.log(r); });
+          this.router.navigate(['./admin/products']).then(r => console.log(r));
         });
     }
-  }
-
-  private buildForm() {
-    this.form = this.formBuilder.group({
-      id: ['', [Validators.required]],
-      title: ['', [Validators.required]],
-      price: ['', [Validators.required, MyValidators.isPriceValid]],
-      image: [''],
-      description: ['', [Validators.required]],
-    });
-  }
-
-  get priceField() {
-    return this.form.get('price');
   }
 
   uploadFile(event) {
@@ -73,4 +59,19 @@ export class FormProductComponent implements OnInit {
       )
       .subscribe();
   }
+
+  private buildForm() {
+    this.form = this.formBuilder.group({
+      id: ['', [Validators.required]],
+      title: ['', [Validators.required]],
+      price: ['', [Validators.required, MyValidators.isPriceValid]],
+      image: [''],
+      description: ['', [Validators.required]],
+    });
+  }
+
+  get priceField() {
+    return this.form.get('price');
+  }
+
 }
