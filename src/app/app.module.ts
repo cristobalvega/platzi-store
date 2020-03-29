@@ -10,7 +10,12 @@ import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { OrderComponent } from './order/components/order/order.component';
-import {MaterialModule} from './material/material.module';
+import { MaterialModule } from './material/material.module';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+
 
 
 @NgModule({
@@ -28,6 +33,9 @@ import {MaterialModule} from './material/material.module';
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
