@@ -16,6 +16,11 @@
       "dom"
     ]
   },
+  "paths": {
+    "@core/*": ["src/app/core/*"],
+    "@material/*": ["src/qpp/material/*"],
+    "@shared/*": ["src/app/shared/*"]
+  },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
